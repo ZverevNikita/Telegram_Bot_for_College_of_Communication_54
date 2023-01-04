@@ -39,7 +39,7 @@ def function(message):
             button1_6 = types.InlineKeyboardButton(text = "Отзывы", url = "https://sch2100.mskobr.ru/o-nas/reviews/")
             button1_7 = types.InlineKeyboardButton(text = "Наши достидения", url = "https://sch2100.mskobr.ru/o-nas/nashi-dostizheniya")
             button1_8 = types.InlineKeyboardButton(text = "Платные образовательные услуги", url = "https://sch2100.mskobr.ru/o-nas/paid_services")
-            button1_9 = types.InlineKeyboardButton(text="Общественная жизнь")
+            button1_9 = types.InlineKeyboardButton(text="Общественная жизнь", callback_data="cb_social_life")
             button1_10 = types.InlineKeyboardButton(text = "Фото и видео", url = "https://sch2100.mskobr.ru/o-nas/photo-i-video/photo")
             button1_11 = types.InlineKeyboardButton(text = "СМИ о нас", url = "https://sch2100.mskobr.ru/o-nas/smi-o-nas")
             markup0.add(button1_1, button1_2, button1_3, button1_4, button1_5, button1_6, button1_7, button1_8, button1_9, button1_10, button1_11)
@@ -145,5 +145,18 @@ def function(message):
             button34_4 = types.InlineKeyboardButton(text = "Полезные ссылки", url = "https://sch2100.mskobr.ru/elektronnye_servisy/useful_links")
             markup20.add(button31_1, button32_2, button33_3, button34_4)
             bot.send_message(message.chat.id, 'Что именно требуется?', reply_markup=markup20)
+
+
+@bot.callback_query_handler(func=lambda call: True)
+def callback_query_handler(call):
+    data = call.data
+    cid = call.message.chat.id
+    mid = call.message.message_id
+    if "social_life" in data:
+        markup = types.InlineKeyboardMarkup(row_width=1)
+        btn = types.InlineKeyboardButton(text="test", url="https://www.google.com")
+        markup.add(btn)
+        bot.edit_message_text(chat_id=cid, message_id=mid, text="Текст сообщения", reply_markup=markup)
+
 
 bot.polling()
