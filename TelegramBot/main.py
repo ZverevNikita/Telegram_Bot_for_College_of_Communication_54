@@ -226,5 +226,4 @@ def callback_query_handler(call):
         markup.add(button)
         bot.edit_message_text(chat_id=chat_id, message_id=message_id, text="текст сообщения", reply_markup=markup)
 
-
 bot.polling()
