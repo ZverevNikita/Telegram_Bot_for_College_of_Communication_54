@@ -30,14 +30,24 @@ def get_weather_string(location):
           'Облачность: {}%\n\n' \
           'Закат: {}' \
         .format(now,
-                r['name'],
-                r['weather'][0]['description'].capitalize(),
-                r['main']['temp'],
-                r['main']['feels_like'],
-                r['wind']['speed'],
-                r['wind']['gust'],
-                r['main']['humidity'],
-                r['main']['pressure'],
-                r['clouds']['all'],
-                datetime.fromtimestamp(r['sys']['sunset']).strftime('%H:%M'))
+                get_data(r, 'name'),
+                get_data(r, 'weather', 0, 'description').capitalize(),
+                get_data(r, 'main', 'temp'),
+                get_data(r, 'main', 'feels_like'),
+                get_data(r, 'wind', 'speed'),
+                get_data(r, 'wind', 'gust'),
+                get_data(r, 'main', 'humidity'),
+                get_data(r, 'main', 'pressure'),
+                get_data(r, 'clouds', 'all'),
+                datetime.fromtimestamp(int(get_data(r, 'sys', 'sunset')))
+                .strftime('%H:%M') if get_data(r, 'sys', 'sunset') != '—' else 'ошибка')
     return msg
+
+
+def get_data(data, *keys):
+    for key in keys:
+        if key in data:
+            data = data[key]
+        else:
+            return '—'
+    return data
