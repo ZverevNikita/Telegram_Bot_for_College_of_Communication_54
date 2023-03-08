@@ -1,12 +1,8 @@
 import json
 from datetime import datetime
-
 import requests
 
-# TODO
-#   open_weather_map_api = ТВОЙ ТОЕКН С САЙТА openweathermap.org (НУЖНО ЗАРЕГИСТРИРОВАТЬСЯ)
-open_weather_map_api = ''
-
+open_weather_map_api = '8a707d148cd925c48443efd55cbb75b9'
 
 def get_weather_string(location):
     query = {
@@ -19,15 +15,15 @@ def get_weather_string(location):
     response = requests.get('https://api.openweathermap.org/data/2.5/weather?', params=query)
     r = json.loads(response.text)
 
-    now = datetime.today().strftime('%d.%m.%Y %H:%M:%S')
-    msg = '{}\n{}\n{}\n\n' \
+    now = datetime.today().strftime('Сейчас в Москве: ' + '%d.%m.%Y %H:%M:%S')
+    message = '{}\n{}\n{}\n' \
           'Температура: {}°C\n' \
-          'Ощущается как: {}°C\n\n' \
-          'Ветер: {} м/с.\n' \
-          'Порывы до {} м/с\n\n' \
+          'Ощущается как: {}°C\n' \
+          'Ветер: {} м/с\n' \
+          'Порывы до {} м/с\n' \
           'Влажность: {}%\n' \
           'Давление: {} мм.рт.столба\n' \
-          'Облачность: {}%\n\n' \
+          'Облачность: {}%\n' \
           'Закат: {}' \
         .format(now,
                 get_data(r, 'name'),
@@ -40,9 +36,8 @@ def get_weather_string(location):
                 get_data(r, 'main', 'pressure'),
                 get_data(r, 'clouds', 'all'),
                 datetime.fromtimestamp(int(get_data(r, 'sys', 'sunset')))
-                .strftime('%H:%M') if get_data(r, 'sys', 'sunset') != '—' else 'ошибка')
-    return msg
-
+                .strftime('%H:%M') if get_data(r, 'sys', 'sunset') != '—' else 'Ошибка!')
+    return message
 
 def get_data(data, *keys):
     for key in keys:
