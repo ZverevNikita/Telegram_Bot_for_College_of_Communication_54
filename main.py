@@ -14,16 +14,17 @@ def start_message(message):
     button2 = types.KeyboardButton(text="Приказы")
     button3 = types.KeyboardButton(text="Тренировки")
     button4 = types.KeyboardButton(text="Спортивные залы")
-    button5 = types.KeyboardButton(text="Погода")
+    button5 = types.KeyboardButton(text="Погода", request_location=True)
     markup.add(button1, button2, button3, button4, button5)
     bot.send_message(message.chat.id, "Приветствую Вас на странице нашего бота «Спортивная жизнь в КС54!»",
                      reply_markup=markup)
 
 
-@bot.message_handler(func=lambda message: True, content_types=['text'])
+@bot.message_handler(func=lambda message: True, content_types=['text', 'location'])
 def message_handler(m):
-    if m.text == 'Погода':
-        bot.send_message(m.chat.id, get_weather_string())
+    if m.location:
+        bot.delete_message(m.chat.id, m.message_id)
+        bot.send_message(m.chat.id, get_weather_string(m.location))
 
 
 bot.infinity_polling()
