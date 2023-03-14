@@ -16,6 +16,19 @@ def start_message(message):
     markup.add(button1, button2, button3, button4, button5)
     bot.send_message(message.chat.id, "Приветствую Вас на странице нашего бота «Спортивная жизнь в КС54!»", reply_markup=markup)
 
+@bot.message_handler(content_types=['text'])
+def function(message):
+    if message.text == "Команды":
+        markup1 = types.InlineKeyboardMarkup(row_width=1)
+        button6 = types.InlineKeyboardButton(text="Волейбол", callback_data='text')
+        button7 = types.InlineKeyboardButton(text="Баскетбол", callback_data='text')
+        button8 = types.InlineKeyboardButton(text="Теннис", callback_data='text')
+        button9 = types.InlineKeyboardButton(text="Шахматы", callback_data='text')
+        button10 = types.InlineKeyboardButton(text="Футбол", callback_data='text')
+        button11 = types.InlineKeyboardButton(text="Лёгкая атлетика", callback_data='text')
+        markup1.add(button6, button7, button8, button9, button10, button11)
+        bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup1)
+
 @bot.message_handler(func=lambda message: True, content_types=['text', 'location'])
 def message_handler(message):
     if message.location:
