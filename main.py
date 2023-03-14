@@ -20,14 +20,25 @@ def start_message(message):
 def function(message):
     if message.text == "Команды":
         markup1 = types.InlineKeyboardMarkup(row_width=1)
-        button6 = types.InlineKeyboardButton(text="Волейбол", callback_data='text')
-        button7 = types.InlineKeyboardButton(text="Баскетбол", callback_data='text')
-        button8 = types.InlineKeyboardButton(text="Теннис", callback_data='text')
-        button9 = types.InlineKeyboardButton(text="Шахматы", callback_data='text')
-        button10 = types.InlineKeyboardButton(text="Футбол", callback_data='text')
-        button11 = types.InlineKeyboardButton(text="Лёгкая атлетика", callback_data='text')
+        button6 = types.InlineKeyboardButton(text="Волейбол 🏐", callback_data='text')
+        button7 = types.InlineKeyboardButton(text="Баскетбол 🏀", callback_data='text')
+        button8 = types.InlineKeyboardButton(text="Теннис 🏓", callback_data='text')
+        button9 = types.InlineKeyboardButton(text="Шахматы ♟️", callback_data='text')
+        button10 = types.InlineKeyboardButton(text="Футбол ⚽", callback_data='text')
+        button11 = types.InlineKeyboardButton(text="Лёгкая атлетика 🏃🏻‍♂️", callback_data='text')
         markup1.add(button6, button7, button8, button9, button10, button11)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup1)
+
+    if message.text == "Тренировки":
+        markup2 = types.InlineKeyboardMarkup(row_width=1)
+        button12 = types.InlineKeyboardButton(text="Волейбол 🏐", callback_data='text')
+        button13 = types.InlineKeyboardButton(text="Баскетбол 🏀", callback_data='text')
+        button14 = types.InlineKeyboardButton(text="Теннис 🏓", callback_data='text')
+        button15 = types.InlineKeyboardButton(text="Шахматы ♟️", callback_data='text')
+        button16 = types.InlineKeyboardButton(text="Футбол ⚽", callback_data='text')
+        button17 = types.InlineKeyboardButton(text="Лёгкая атлетика 🏃🏻‍♂️", callback_data='text')
+        markup2.add(button12, button13, button14, button15, button16, button17)
+        bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup2)
 
 @bot.message_handler(func=lambda message: True, content_types=['text', 'location'])
 def message_handler(message):
