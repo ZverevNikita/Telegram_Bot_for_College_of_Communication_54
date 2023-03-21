@@ -112,33 +112,16 @@ def callback(call):
         bot.send_message(chat_id=call.message.chat.id, text='')
     elif call.data == 'tag':
         bot.send_message(chat_id=call.message.chat.id, text = 'Адрес спортивой площадки: город Москва, улица Большие Каменщики, дом 7')
-        bot.send_photo(call.message.chat.id, open('tag_2-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('tag_3-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('tag_5-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('tag_6-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('tag_7-scaled.jpg', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('tag_2-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('tag_3-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('tag_5-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('tag_6-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('tag_7-scaled.jpg', 'rb'))])
     elif call.data == 'rya':
         bot.send_message(chat_id=call.message.chat.id, text='Адрес спортивой площадки: город Москва, Рязанский проспект, дом 8, строение 1')
-        bot.send_photo(call.message.chat.id, open('rya_1-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rya_2-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rya_3-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rya_4-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rya_5-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rya_6-1-scaled.jpg', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('rya_1-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rya_2-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rya_3-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rya_4-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rya_5-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rya_6-1-scaled.jpg', 'rb'))])
     elif call.data == 'rim':
-        bot.send_message(chat_id=call.message.chat.id, text='Адрес спортивной площадки: город Москва, улица Большие Каменщики, дом 7')
-        bot.send_photo(call.message.chat.id, open('rim_3-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rim_4-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rim_5-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('rim_6-1-scaled.jpg', 'rb'))
+        bot.send_message(chat_id=call.message.chat.id, text='Адрес спортивной площадки: город Москва, улица Рабочая, дом 12, строение 1')
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('rim_3-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rim_4-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rim_5-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('rim_6-1-scaled.jpg', 'rb'))])
     elif call.data == 'bas':
         bot.send_message(chat_id=call.message.chat.id, text='Адрес спортивной площадки: город Москва, улица Басовская, дом 12')
-        bot.send_photo(call.message.chat.id, open('bas-1-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('bas-2-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('bas-4-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('bas-5-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('bas-6-scaled.jpg', 'rb'))
-        bot.send_photo(call.message.chat.id, open('bas-7-scaled.jpg', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('bas-1-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-2-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-4-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-5-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-6-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-7-scaled.jpg', 'rb'))])
     elif call.data == 'training_final':
         bot.send_document(call.message.chat.id, open('трен.финал.pdf', 'rb'))
     elif call.data == 'football':
