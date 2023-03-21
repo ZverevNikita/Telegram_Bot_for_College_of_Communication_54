@@ -44,7 +44,7 @@ def function(message):
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup2)
 
     if message.text == "Приказы":
-        markup3 = types.InlineKeyboardMarkup(row_width=4)
+        markup3 = types.InlineKeyboardMarkup(row_width=2)
         button18 = types.InlineKeyboardButton(text = "трен.финал", callback_data ='training_final')
         button19 = types.InlineKeyboardButton(text = "трен.ФУТБОЛ", callback_data='football')
         button20 = types.InlineKeyboardButton(text = "трен.юноши", callback_data = 'teenagers')
@@ -72,13 +72,20 @@ def function(message):
         markup3.add(button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup3)
 
+    if message.text == "Спортивные залы":
+        markup4 = types.InlineKeyboardMarkup(row_width=1)
+        button42 = types.InlineKeyboardButton(text = "Таганское-1", callback_data='tag')
+        button43 = types.InlineKeyboardButton(text = "Рязанское-6", callback_data='rya')
+        button44 = types.InlineKeyboardButton(text = "Римское-7", callback_data='rim')
+        button45 = types.InlineKeyboardButton(text = "Авиамоторное-8", callback_data='bas')
+        markup4.add(button42, button43, button44, button45)
+        bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup4)
 
 @bot.message_handler(func=lambda message: True, content_types=['text', 'location'])
 def message_handler(message):
     if message.location:
         bot.delete_message(message.chat.id, message.message_id)
         bot.send_message(message.chat.id, get_weather_string(message.location))
-
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback(call):
@@ -106,86 +113,82 @@ def callback(call):
         bot.send_message(chat_id=call.message.chat.id, text='')
     elif call.data == 'training_athletics':
         bot.send_message(chat_id=call.message.chat.id, text='')
+    elif call.data == 'tag':
+        bot.send_message(chat_id=call.message.chat.id, text = 'Адрес спортивой площадки: город Москва, улица Большие Каменщики, дом 7')
+        bot.send_document(call.message.chat.id, open('tag_2-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('tag_3-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('tag_5-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('tag_6-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('tag_7-scaled.jpg', 'rb'))
+    elif call.data == 'rya':
+        bot.send_message(chat_id=call.message.chat.id, text='Адрес спортивой площадки: город Москва, Рязанский проспект, дом 8, строение 1')
+        bot.send_document(call.message.chat.id, open('rya_1-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rya_2-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rya_3-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rya_4-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rya_5-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rya_6-1-scaled.jpg', 'rb'))
+    elif call.data == 'rim':
+        bot.send_message(chat_id=call.message.chat.id, text='Адрес спортивной площадки: город Москва, улица Большие Каменщики, дом 7')
+        bot.send_document(call.message.chat.id, open('rim_3-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rim_4-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rim_5-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('rim_6-1-scaled.jpg', 'rb'))
+    elif call.data == 'bas':
+        bot.send_message(chat_id=call.message.chat.id, text='Адрес спортивной площадки: город Москва, улица Басовская, дом 12')
+        bot.send_document(call.message.chat.id, open('bas-1-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('bas-2-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('bas-4-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('bas-5-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('bas-6-scaled.jpg', 'rb'))
+        bot.send_document(call.message.chat.id, open('bas-7-scaled.jpg', 'rb'))
     elif call.data == 'training_final':
-        document = open("трен.финал.pdf")
-        send_document(chat_id, document)
+        bot.send_document(call.message.chat.id, open('трен.финал.pdf', 'rb'))
     elif call.data == 'football':
-        document1 = open("трен.ФУТБОЛ.pdf")
-        send_document(chat_id, document1)
+        bot.send_document(call.message.chat.id, open('трен.ФУТБОЛ.pdf', 'rb'))
     elif call.data == 'teenagers':
-        document2 = open("трен.юноши.pdf")
-        send_document(chat_id, document2)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'doc1034':
-        document3 = open("doc1034.pdf")
-        send_document(chat_id, document3)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'act':
-        document4 = open("Акт передачи инвентаря.pdf")
-        send_document(chat_id, document4)
-    elif call.data == 'act':
-        document5 = open("Акт передачи инвентаря.pdf")
-        send_document(chat_id, document5)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'basket':
-        document6 = open("Баскет.pdf")
-        send_document(chat_id, document6)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'basketball':
-        document7 = open("Баскетбол 5 на 5.pdf")
-        send_document(chat_id, document7)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'asb':
-        document8 = open("Баскетбол АСБ.pdf")
-        send_document(chat_id, document8)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'basketball_girls':
-        document9 = open("Баскет Д.pdf")
-        send_document(chat_id, document9)
-    elif call.data == 'basketball_girls':
-        document10 = open("Баскет Д.pdf")
-        send_document(chat_id, document10)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'volleyball_girls':
-        document11 = open("Волейбол Д.pdf")
-        send_document(chat_id, document11)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'KK':
-        document12 = open("волейбол КК.pdf")
-        send_document(chat_id, document12)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'contrgame':
-        document13 = open("контигра волейбол.pdf")
-        send_document(chat_id, document13)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'game':
-        document14 = open("контр.игра.pdf")
-        send_document(chat_id, document14)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'otbor':
-        document15 = open("отбор футбол.pdf")
-        send_document(chat_id, document15)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'order_volleyball_girls':
-        document16 = open("Приказ Волейбол Д.pdf")
-        send_document(chat_id, document16)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'order_volleyball':
-        document17 = open("Приказ волейбол.pdf")
-        send_document(chat_id, document17)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'rasp_tren_foot':
-        document18 = open("Расп_Трен_Фут.pdf")
-        send_document(chat_id, document18)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'sor_chess':
-        document19 = open("Сор_Шахматы.pdf")
-        send_document(chat_id, document19)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'sor_basket':
-        document20 = open("сор-баскет.pdf")
-        send_document(chat_id, document20)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'SSL':
-        document21 = open("ССЛ.воллейбол.Ю.pdf")
-        send_document(chat_id, document21)
-    elif call.data == 'SSL':
-        document22 = open("ССЛ.воллейбол.Ю.pdf")
-        send_document(chat_id, document22)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'street':
-        document23 = open("стрит бол девушки.pdf")
-        send_document(chat_id, document23)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'ten':
-        document24 = open("Теннис.pdf")
-        send_document(chat_id, document24)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'tren_v':
-        document25 = open("трен волейбол.pdf")
-        send_document(chat_id, document25)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
     elif call.data == 'tren_girls':
-        document26 = open("трен.девушки.pdf")
-        send_document(chat_id, document26)
+        bot.send_document(call.message.chat.id, open('', 'rb'))
 
 bot.infinity_polling()
