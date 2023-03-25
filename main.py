@@ -64,7 +64,7 @@ def function(message):
         button37 = types.InlineKeyboardButton(text = "ССЛ.воллейбол.Ю", callback_data = 'SSL')
         button38 = types.InlineKeyboardButton(text = "стрит бол девушки", callback_data = 'street')
         button39 = types.InlineKeyboardButton(text = "Теннис", callback_data = 'ten')
-        button40 = types.InlineKeyboardButton(text = "трен волейбол", callback_data = 'tren_v')
+        button40 = types.InlineKeyboardButton(text = "трен.волейбол", callback_data = 'tren_v')
         button41 = types.InlineKeyboardButton(text = "трен.девушки", callback_data = 'tren_girls')
         markup3.add(button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup3)
@@ -119,52 +119,52 @@ def callback(call):
     elif call.data == 'bas':
         bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('bas-1-scaled.jpg', 'rb'), caption='Адрес спортивной площадки: город Москва, улица Басовская, дом 12'), telebot.types.InputMediaPhoto(open('bas-2-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-4-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-5-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-6-scaled.jpg', 'rb')), telebot.types.InputMediaPhoto(open('bas-7-scaled.jpg', 'rb'))])
     elif call.data == 'training_final':
-        bot.send_document(call.message.chat.id, open('трен.финал.pdf', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('1.jpg', 'rb'), caption='трен.финал'), telebot.types.InputMediaPhoto(open('2.jpg', 'rb'))])
     elif call.data == 'football':
-        bot.send_document(call.message.chat.id, open('трен.ФУТБОЛ.pdf', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('3.jpg', 'rb'), caption='трен.ФУТБОЛ'), telebot.types.InputMediaPhoto(open('4.jpg', 'rb'))])
     elif call.data == 'teenagers':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('5.jpg', 'rb'), caption='трен.юноши'), telebot.types.InputMediaPhoto(open('6.jpg', 'rb'))])
     elif call.data == 'doc1034':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('7.jpg', 'rb'), caption='doc1034'), telebot.types.InputMediaPhoto(open('8.jpg', 'rb'))])
     elif call.data == 'act':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('9.jpg', 'rb'), caption='Акт передачи инвентаря'), telebot.types.InputMediaPhoto(open('10.jpg', 'rb')), telebot.types.InputMediaPhoto(open('11.jpg', 'rb')), telebot.types.InputMediaPhoto(open('12.jpg', 'rb')), telebot.types.InputMediaPhoto(open('13.jpg', 'rb'))])
     elif call.data == 'basket':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('54.jpg', 'rb'), caption='Баскет'), telebot.types.InputMediaPhoto(open('55.jpg', 'rb')), telebot.types.InputMediaPhoto(open('56.jpg', 'rb')), telebot.types.InputMediaPhoto(open('57.jpg', 'rb'))])
     elif call.data == 'basketball':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('52.jpg', 'rb'), caption='Баскетбол 5 на 5'), telebot.types.InputMediaPhoto(open('53.jpg', 'rb'))])
     elif call.data == 'asb':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('48.jpg', 'rb'), caption='Баскетбол АСБ'), telebot.types.InputMediaPhoto(open('49.jpg', 'rb')), telebot.types.InputMediaPhoto(open('50.jpg', 'rb')), telebot.types.InputMediaPhoto(open('51.jpg', 'rb'))])
     elif call.data == 'basketball_girls':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('46.jpg', 'rb'), caption='Баскет Д'), telebot.types.InputMediaPhoto(open('47.jpg', 'rb'))])
     elif call.data == 'volleyball_girls':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('44.jpg', 'rb'), caption='Волейбол Д'), telebot.types.InputMediaPhoto(open('45.jpg', 'rb'))])
     elif call.data == 'KK':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('41.jpg', 'rb'), caption='волейбол КК'), telebot.types.InputMediaPhoto(open('42.jpg', 'rb')), telebot.types.InputMediaPhoto(open('43.jpg', 'rb'))])
     elif call.data == 'contrgame':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('39.jpg', 'rb'), caption='контригра волейбол'), telebot.types.InputMediaPhoto(open('40.jpg', 'rb'))])
     elif call.data == 'game':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('37.jpg', 'rb'), caption='контр.игра'), telebot.types.InputMediaPhoto(open('38.jpg', 'rb'))])
     elif call.data == 'otbor':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('36.jpg', 'rb'), caption='отбор футбол')])
     elif call.data == 'order_volleyball_girls':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('34.jpg', 'rb'), caption='Приказ Волейбол Д'), telebot.types.InputMediaPhoto(open('35.jpg', 'rb'))])
     elif call.data == 'order_volleyball':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('32.jpg', 'rb'), caption='Приказ волейбол'), telebot.types.InputMediaPhoto(open('33.jpg', 'rb'))])
     elif call.data == 'rasp_tren_foot':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('30.jpg', 'rb'), caption='Расп_Трен_Фут'), telebot.types.InputMediaPhoto(open('31.jpg', 'rb'))])
     elif call.data == 'sor_chess':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('28.jpg', 'rb'), caption='Сор_Шахматы'), telebot.types.InputMediaPhoto(open('29.jpg', 'rb'))])
     elif call.data == 'sor_basket':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('26.jpg', 'rb'), caption='сор-баскет'), telebot.types.InputMediaPhoto(open('27.jpg', 'rb'))])
     elif call.data == 'SSL':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('24.jpg', 'rb'), caption='ССЛ.волейбол.Ю'), telebot.types.InputMediaPhoto(open('25.jpg', 'rb'))])
     elif call.data == 'street':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('22.jpg', 'rb'), caption='стрит бол девушки'), telebot.types.InputMediaPhoto(open('23.jpg', 'rb'))])
     elif call.data == 'ten':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('18.jpg', 'rb'), caption='Теннис'), telebot.types.InputMediaPhoto(open('19.jpg', 'rb')), telebot.types.InputMediaPhoto(open('20.jpg', 'rb')), telebot.types.InputMediaPhoto(open('21.jpg', 'rb'))])
     elif call.data == 'tren_v':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('16.jpg', 'rb'), caption='трен.волейбол'), telebot.types.InputMediaPhoto(open('17.jpg', 'rb'))])
     elif call.data == 'tren_girls':
-        bot.send_document(call.message.chat.id, open('', 'rb'))
+        bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('14.jpg', 'rb'), caption='трен.девушки'), telebot.types.InputMediaPhoto(open('15.jpg', 'rb'))])
 
 bot.infinity_polling()
