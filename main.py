@@ -20,7 +20,7 @@ def start_message(message):
 
 @bot.message_handler(content_types=['text'])
 def function(message):
-    if message.text == "Команды":
+    if message.text == "Команды ССК „Легион“":
         markup1 = types.InlineKeyboardMarkup(row_width=1)
         button6 = types.InlineKeyboardButton(text="Волейбол 🏐", callback_data='commands_volleyball')
         button7 = types.InlineKeyboardButton(text="Баскетбол 🏀", callback_data='commands_basketball')
@@ -31,7 +31,7 @@ def function(message):
         markup1.add(button6, button7, button8, button9, button10, button11)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup1)
 
-    if message.text == "Тренировки":
+    if message.text == "Тренировки ССК „Легион“":
         markup2 = types.InlineKeyboardMarkup(row_width=1)
         button12 = types.InlineKeyboardButton(text="Волейбол 🏐", callback_data='training_volleyball')
         button13 = types.InlineKeyboardButton(text="Баскетбол 🏀", callback_data='training_basketball')
@@ -42,7 +42,7 @@ def function(message):
         markup2.add(button12, button13, button14, button15, button16, button17)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup2)
 
-    if message.text == "Приказы":
+    if message.text == "Приказы ССК „Легион“":
         markup3 = types.InlineKeyboardMarkup(row_width=2)
         button18 = types.InlineKeyboardButton(text = "трен.финал", callback_data ='training_final')
         button19 = types.InlineKeyboardButton(text = "трен.ФУТБОЛ", callback_data='football')
@@ -71,7 +71,7 @@ def function(message):
         markup3.add(button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup3)
 
-    if message.text == "Спортивные залы":
+    if message.text == "Спортивные залы ССК „Легион“":
         markup4 = types.InlineKeyboardMarkup(row_width=1)
         button42 = types.InlineKeyboardButton(text = "Таганское-1", callback_data='tag')
         button43 = types.InlineKeyboardButton(text = "Рязанское-6", callback_data='rya')
