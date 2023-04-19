@@ -10,13 +10,13 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(commands=['start'])
 def start_message(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    button1 = types.KeyboardButton(text="Команды")
-    button2 = types.KeyboardButton(text="Приказы")
-    button3 = types.KeyboardButton(text="Тренировки")
-    button4 = types.KeyboardButton(text="Спортивные залы")
+    button1 = types.KeyboardButton(text="Команды ССК „Легион“")
+    button2 = types.KeyboardButton(text="Приказы ССК „Легион“")
+    button3 = types.KeyboardButton(text="Тренировки ССК „Легион“")
+    button4 = types.KeyboardButton(text="Спортивные залы ССК „Легион“")
     button5 = types.KeyboardButton(text="Погода", request_location=True)
     markup.add(button1, button2, button3, button4, button5)
-    bot.send_message(message.chat.id, "Приветствую Вас на странице нашего бота «Спортивная жизнь в КС54!»", reply_markup=markup)
+    bot.send_message(message.chat.id, "Приветствую Вас на странице нашего бота «Спортивная жизнь ССК Легион»", reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def function(message):
