@@ -101,68 +101,8 @@ def function(message):
         markup02.add(button12, button13, button14, button15, button16)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup02)
 
-    if message.text == "Команды ССК „Легион“":
-        markup01 = types.InlineKeyboardMarkup(row_width=1)
-        button01 = types.InlineKeyboardButton(text="Волейбол 🏐", callback_data='commands_volleyball')
-        button02 = types.InlineKeyboardButton(text="Баскетбол 🏀", callback_data='commands_basketball')
-        button03 = types.InlineKeyboardButton(text="Теннис 🏓", callback_data='commands_tennis')
-        button04 = types.InlineKeyboardButton(text="Шахматы ♟️", callback_data='commands_chess')
-        button05= types.InlineKeyboardButton(text="Футбол ⚽", callback_data='commands_football')
-        button06 = types.InlineKeyboardButton(text="Лёгкая атлетика 🏃🏻‍♂️", callback_data='commands_athletics')
-        markup01.add(button01, button02, button03, button04, button05, button06)
-        bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup01)
-
-    if message.text == "Приказы ССК „Легион“":
-        markup03 = types.InlineKeyboardMarkup(row_width=2)
-        button018 = types.InlineKeyboardButton(text="трен.финал", callback_data='training_final')
-        button019 = types.InlineKeyboardButton(text="трен.ФУТБОЛ", callback_data='football')
-        button020 = types.InlineKeyboardButton(text="трен.юноши", callback_data='teenagers')
-        button021 = types.InlineKeyboardButton(text="doc1034", callback_data='doc1034')
-        button022 = types.InlineKeyboardButton(text="Акт передачи инвентаря", callback_data='act')
-        button023 = types.InlineKeyboardButton(text="Баскет", callback_data='basket')
-        button024 = types.InlineKeyboardButton(text="Баскетбол 5 на 5", callback_data='basketball')
-        button025 = types.InlineKeyboardButton(text="Баскетбол АСБ", callback_data='asb')
-        button026 = types.InlineKeyboardButton(text="Баскет Д", callback_data='basketball_girls')
-        button027 = types.InlineKeyboardButton(text="Волейбол Д", callback_data='volleyball_girls')
-        button028 = types.InlineKeyboardButton(text="волейбол КК", callback_data='KK')
-        button029 = types.InlineKeyboardButton(text="контигра волейбол", callback_data='contrgame')
-        button030 = types.InlineKeyboardButton(text="контр.игра", callback_data='game')
-        button031 = types.InlineKeyboardButton(text="отбор футбол", callback_data='otbor')
-        button032 = types.InlineKeyboardButton(text="Приказ Волейбол Д", callback_data="order_volleyball_girls")
-        button033 = types.InlineKeyboardButton(text="Приказ волейбол", callback_data="order_volleyball")
-        button034 = types.InlineKeyboardButton(text="Расп_Трен_Фут", callback_data='rasp_tren_foot')
-        button035 = types.InlineKeyboardButton(text="Сор_Шахматы", callback_data='sor_chess')
-        button036 = types.InlineKeyboardButton(text="сор-баскет", callback_data='sor_basket')
-        button037 = types.InlineKeyboardButton(text="ССЛ.воллейбол.Ю", callback_data='SSL')
-        button038 = types.InlineKeyboardButton(text="стрит бол девушки", callback_data='street')
-        button039 = types.InlineKeyboardButton(text="Теннис", callback_data='ten')
-        button040 = types.InlineKeyboardButton(text="трен.волейбол", callback_data='tren_v')
-        button041 = types.InlineKeyboardButton(text="трен.девушки", callback_data='tren_girls')
-        markup03.add(button018, button019, button020, button021, button022, button023, button024, button025, button026, button027, button028, button029, button030, button031, button032, button033, button034, button035, button036, button037, button038, button039, button040, button041)
-        bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup03)
-
-    if message.text == "Тренировки ССК „Легион“":
-        markup20 = types.InlineKeyboardMarkup(row_width=1)
-        button120 = types.InlineKeyboardButton(text="Волейбол 🏐", callback_data='training_volleyball')
-        button130 = types.InlineKeyboardButton(text="Баскетбол 🏀", callback_data='training_basketball')
-        button140 = types.InlineKeyboardButton(text="Теннис 🏓", callback_data='training_tennis')
-        button150 = types.InlineKeyboardButton(text="Шахматы ♟️", callback_data='training_chess')
-        button160 = types.InlineKeyboardButton(text="Футбол ⚽", callback_data='training_football')
-        button170 = types.InlineKeyboardButton(text="Лёгкая атлетика 🏃🏻‍♂️", callback_data='training_athletics')
-        markup20.add(button120, button130, button140, button150, button160, button170)
-        bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup20)
-
-    if message.text == "Спортивные залы ССК „Легион“":
-        markup04 = types.InlineKeyboardMarkup(row_width=1)
-        button042 = types.InlineKeyboardButton(text="Таганское-1", callback_data='tag')
-        button043 = types.InlineKeyboardButton(text="Рязанское-6", callback_data='rya')
-        button044 = types.InlineKeyboardButton(text="Римское-7", callback_data='rim')
-        button045 = types.InlineKeyboardButton(text="Авиамоторное-8", callback_data='bas')
-        markup04.add(button042, button043, button044, button045)
-        bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup04)
-
     if message.text == "ВПК":
-        markup3 = types.ReplyKeyboardMarkup(row_width=2)
+        markup3 = types.ReplyKeyboardMarkup(row_width=1)
         button18 = types.KeyboardButton(text="Команды ССК „Легион“")
         button19 = types.KeyboardButton(text="Приказы ССК „Легион“")
         button20 = types.KeyboardButton(text="Тренировки ССК „Легион“")
@@ -182,7 +122,7 @@ def function(message):
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup4)
 
     if message.text == "Профессионалитет":
-        markup5 = types.ReplyKeyboardButton(row_width=1)
+        markup5 = types.ReplyKeyboardMarkup(row_width=1)
         button52 = types.KeyboardButton(text="Команды ССК „Легион“")
         button53 = types.KeyboardButton(text="Приказы ССК „Легион“")
         button54 = types.KeyboardButton(text="Тренировки ССК „Легион“")
@@ -192,7 +132,7 @@ def function(message):
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup5)
 
     if message.text == "Волонтёрский корпус":
-        markup6 = types.ReplyKeyboardButton(row_width=1)
+        markup6 = types.ReplyKeyboardMarkup(row_width=1)
         button62 = types.KeyboardButton(text="Команды ССК „Легион“")
         button63 = types.KeyboardButton(text="Приказы ССК „Легион“")
         button64 = types.KeyboardButton(text="Тренировки ССК „Легион“")
