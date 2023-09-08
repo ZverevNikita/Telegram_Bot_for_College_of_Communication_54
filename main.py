@@ -40,8 +40,7 @@ def function(message):
         button0_4 = types.InlineKeyboardButton(text="Шахматы ♟️", callback_data='commands_chess')
         button0_5= types.InlineKeyboardButton(text="Футбол ⚽", callback_data='commands_football')
         button0_6 = types.InlineKeyboardButton(text="Лёгкая атлетика 🏃🏻‍♂️", callback_data='commands_athletics')
-        button_back = types.InlineKeyboardButton(text="Назад")
-        markup0.add(button0_1, button0_2, button0_3, button0_4, button0_5, button0_6, button_back)
+        markup0.add(button0_1, button0_2, button0_3, button0_4, button0_5, button0_6)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup0)
 
     if message.text == "Приказы ССК „Легион“":
@@ -70,8 +69,7 @@ def function(message):
         button39 = types.InlineKeyboardButton(text="Теннис", callback_data='ten')
         button40 = types.InlineKeyboardButton(text="трен.волейбол", callback_data='tren_v')
         button41 = types.InlineKeyboardButton(text="трен.девушки", callback_data='tren_girls')
-        button_back = types.KeyboardButton(text="Назад")
-        markup3.add(button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41, button_back)
+        markup3.add(button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup3)
 
     if message.text == "Тренировки ССК „Легион“":
@@ -82,8 +80,7 @@ def function(message):
         button15 = types.InlineKeyboardButton(text="Шахматы ♟️", callback_data='training_chess')
         button16 = types.InlineKeyboardButton(text="Футбол ⚽", callback_data='training_football')
         button17 = types.InlineKeyboardButton(text="Лёгкая атлетика 🏃🏻‍♂️", callback_data='training_athletics')
-        button_back = types.KeyboardButton(text="Назад")
-        markup2.add(button12, button13, button14, button15, button16, button17, button_back)
+        markup2.add(button12, button13, button14, button15, button16, button17)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup2)
 
     if message.text == "Спортивные залы ССК „Легион“":
@@ -92,8 +89,7 @@ def function(message):
         button43 = types.InlineKeyboardButton(text="Рязанское-6", callback_data='rya')
         button44 = types.InlineKeyboardButton(text="Римское-7", callback_data='rim')
         button45 = types.InlineKeyboardButton(text="Авиамоторное-8", callback_data='bas')
-        button_back = types.KeyboardButton(text="Назад")
-        markup4.add(button42, button43, button44, button45, button_back)
+        markup4.add(button42, button43, button44, button45)
         bot.send_message(message.chat.id, "Что Вам необходимо узнать?", reply_markup=markup4)
 
     if message.text == "Назад":
@@ -244,5 +240,7 @@ def callback(call):
         bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('16.jpg', 'rb'), caption='трен.волейбол'), telebot.types.InputMediaPhoto(open('17.jpg', 'rb'))])
     elif call.data == 'tren_girls':
         bot.send_media_group(call.message.chat.id, [telebot.types.InputMediaPhoto(open('14.jpg', 'rb'), caption='трен.девушки'), telebot.types.InputMediaPhoto(open('15.jpg', 'rb'))])
+    elif call.data == 'back':
+        start_message(call.message)
 
 bot.infinity_polling()
